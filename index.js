@@ -3,16 +3,89 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const FILE_NAME = "./README_generated.md";
 
-// TODO: Create an array of questions for user input
+// Create objects to pass into the inquirer prompt
+const askForTitle = {
+    type: "input",
+    message: "What's the name of your project?",
+    name: "projectName",
+    default: "My Cool Project",
+}
+
+const askforDescription = {
+
+}
+
+const askForInstallation = {
+
+}
+
+const askForUsage = {
+    
+}
+
+const askForContribution = {
+    
+}
+
+const askForTesting = {
+    
+}
+
+const askForLicense = {
+    type: "list",
+    message: "Select a license:",
+    name: "license",
+    choices: [
+        {
+            name: "Apache license 2.0",
+            value: "Apache-2.0"
+        },
+        {
+            name: "GNU General Public License v2.0",
+            value: "GPL-2.0",
+        },
+        {
+            name: "GNU General Public License v3.0",
+            value: "GPL-3.0",
+        },
+        {
+            name: "MIT",
+            value: "MIT",
+        },
+        {
+            name: "Do What The F*ck You Want To Public License",
+            value: "WTFPL"
+        }
+    ]
+}
+
+const askForGithub = {
+    
+}
+
+const askForEmail = {
+    
+}
+
+
+// Create an array of questions for user input
 const questions = [
-    {
-        type: "input",
-        message: "What's the name of your project?",
-        name: "projectName"
-    },
+    askForTitle,
+    // askforDescription, 
+    // askForInstallation, 
+    // askForUsage, 
+    // askForContribution, 
+    // askForTesting, 
+    askForLicense, 
+    // askForGithub, 
+    // askForEmail
 ];
 
-// TODO: Create a function to write README file
+/**
+ * Takes in the passed in string "data" and  
+ * @param {String} fileName 
+ * @param {String} data 
+ */
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         err ? console.error(err) : console.log("Generated README");
@@ -20,13 +93,13 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-async function init() {
+async function init(questions) {
     let responses = await inquirer.prompt(questions);
     console.log(responses)
 
-    let readmeStr = buildReadmeStr(responses);
+    // let readmeStr = buildReadmeStr(responses);
     
-    writeToFile(FILE_NAME, readmeStr);
+    // writeToFile(FILE_NAME, readmeStr);
 }
 
 function buildReadmeStr(response) {
@@ -52,4 +125,4 @@ function buildReadmeStr(response) {
 
 
 // Function call to initialize app
-init();
+init(questions);
