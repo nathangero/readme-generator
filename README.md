@@ -23,9 +23,10 @@ When asked for the GitHub username and email, both have to pass validation check
 
 1. Open the Terminal or Command Prompt.
 2. Navigate to the directory where the code was downloaded/cloned into.
-3. Run the following code
+3. Run the following code in order to install the node_modules and run the program.
 
 ```bash
+npm install
 node index.js
 ```
 
