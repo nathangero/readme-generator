@@ -18,11 +18,15 @@ const askforDescription = {
 }
 
 const askForInstallation = {
-
+    type: "editor",
+    message: "How does one install your project?",
+    name: "installation",
 }
 
 const askForUsage = {
-    
+    type: "editor",
+    message: "How does one use your project?",
+    name: "usage",
 }
 
 const askForContribution = {
