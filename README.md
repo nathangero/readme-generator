@@ -38,6 +38,56 @@ node index.js
 https://github.com/nathangero/readme-generator/assets/25491849/7e388e0e-2d5e-409a-b6b9-87b64d99aebc
 
 
+## Learning Points
+
+
+## Code Snippets
+
+GitHub username validation
+```js
+const askForGithub = {
+    type: "input",
+    message: "What's your GitHub username?",
+    name: "github",
+    validate: async function(value) {
+        // check if the username exists
+        let requestUrl = "https://api.github.com/users/" + value
+        let response = await fetch(requestUrl);
+
+        if (!response.ok) {
+            console.error("Couldn't find that GitHub user. Please try again");
+        } else {
+            return true
+        }
+    }
+}
+```
+
+Switch statement to get license badge
+```js
+function renderLicenseBadge(license) {
+    switch (license) {
+        case "Apache-2.0":
+            return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](${renderLicenseLink(license)})`
+
+        case "GPL-2.0":
+            return `[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](${renderLicenseLink(license)})`
+
+        case "GPL-3.0":
+            return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](${renderLicenseLink(license)})`
+
+        case "MIT":
+            return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${renderLicenseLink(license)})`
+            
+        case "WTFPL":
+            return `[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](${renderLicenseLink(license)})`
+
+        default:
+            return ""
+    }
+}
+```
+
 ## Credits
 
 [Validating Email Address](https://stackoverflow.com/a/46181)
