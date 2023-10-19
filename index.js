@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const FILE_NAME = "./README_generated.md";
@@ -130,7 +129,10 @@ function writeToFile(fileName, data) {
     })
 }
 
-// TODO: Create a function to initialize app
+/**
+ * Uses the questions passed in to ask the user what information they want to put into their README.
+ * @param {Array} questions 
+ */
 async function init(questions) {
     let projectInfo = {
         "name": 'My Cool Project',
@@ -155,6 +157,12 @@ async function init(questions) {
     writeToFile(FILE_NAME, readmeStr);
 }
 
+
+/**
+ * Takes all the responses from the user and formats it in Markdown notation.
+ * @param {Object} response 
+ * @returns String containing Markdown notation
+ */
 function buildReadmeStr(response) {
     const SYMBOL_TITLE= "#";
     const SYMBOL_SECTION = "##";
@@ -184,7 +192,11 @@ function buildReadmeStr(response) {
     return `${title}${licenseBadge}${tableOfContents}${description}${installation}${usage}${testing}${contributing}${questions}${license}`
 }
 
-
+/**
+ * Takes the license string and identifies which badge should be shown
+ * @param {String} license 
+ * @returns Markdown containing the badge
+ */
 function buildLicenseBadge(license) {
     switch (license) {
         case "Apache-2.0":
@@ -207,7 +219,10 @@ function buildLicenseBadge(license) {
     }
 }
 
-
+/**
+ * Builds the Table of Contents for the README.
+ * @returns String containing the table of contents in Markdown
+ */
 function buildTableOfContents() {
     const SYMBOL_LINE_BREAK = "\n\n";
     let description = "* [Description](#description)" + SYMBOL_LINE_BREAK;
