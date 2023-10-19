@@ -7,12 +7,14 @@ const FILE_NAME = "./README_generated.md";
 const askForTitle = {
     type: "input",
     message: "What's the name of your project?",
-    name: "projectName",
+    name: "name",
     default: "My Cool Project",
 }
 
 const askforDescription = {
-
+    type: "editor",
+    message: "Describe your project (this will open an editor, save & close it to continue):",
+    name: "description",
 }
 
 const askForInstallation = {
@@ -101,13 +103,13 @@ const askForEmail = {
 // Create an array of questions for user input
 const questions = [
     // askForTitle,
-    // askforDescription, 
+    askforDescription, 
     // askForInstallation, 
     // askForUsage, 
     // askForContribution, 
     // askForTesting, 
     // askForLicense, 
-    askForGithub,
+    // askForGithub,
     // askForEmail
 ];
 
@@ -124,8 +126,8 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 async function init(questions) {
-    let responses = await inquirer.prompt(questions);
-    console.log(responses)
+    let projectInfo = await inquirer.prompt(questions);
+    console.log(projectInfo)
 
     // let readmeStr = buildReadmeStr(responses);
     
