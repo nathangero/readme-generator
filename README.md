@@ -35,9 +35,7 @@ node index.js
 
 ## Video Walkthrough
 
-[![Walkthrough of application](./assets/videos/readme-generator-walkthrough.mp4)](./assets/videos/readme-generator-walkthrough.mp4)
-
-[![Walkthrough of application](https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link)](https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link)
+<iframe src="https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link" title="App walkthrough" width="680" height="480"><iframe>
 
 ## Credits
 
