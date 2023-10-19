@@ -172,7 +172,7 @@ function buildReadmeStr(response) {
 
     let title = `${SYMBOL_TITLE} ${name}${SYMBOL_LINE_BREAK}`;
     let licenseBadge = `${buildLicenseBadge(lic)}${SYMBOL_LINE_BREAK}`
-    let tableOfContents = `${SYMBOL_SECTION} Table of Contents${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
+    let tableOfContents = `${SYMBOL_SECTION} Table of Contents${SYMBOL_LINE_BREAK}${buildTableOfContents()}${SYMBOL_LINE_BREAK}`;
     let description = `${SYMBOL_SECTION} Description${SYMBOL_LINE_BREAK}${desc}${SYMBOL_LINE_BREAK}`;
     let installation = `${SYMBOL_SECTION} Installation${SYMBOL_LINE_BREAK}${install}${SYMBOL_LINE_BREAK}`;
     let usage = `${SYMBOL_SECTION} Usage${SYMBOL_LINE_BREAK}${use}${SYMBOL_LINE_BREAK}`;
@@ -205,6 +205,20 @@ function buildLicenseBadge(license) {
         default: // MIT by default
             return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
     }
+}
+
+
+function buildTableOfContents() {
+    const SYMBOL_LINE_BREAK = "\n\n";
+    let description = "* [Description](#description)" + SYMBOL_LINE_BREAK;
+    let installation = "* [Installation](#installation)" + SYMBOL_LINE_BREAK;
+    let usage = "* [Usage](#usage)" + SYMBOL_LINE_BREAK;
+    let testing = "* [Tests](#tests)" + SYMBOL_LINE_BREAK;
+    let contribution = "* [Contributing](#contributing)" + SYMBOL_LINE_BREAK;
+    let questions = "* [Questions](#questions)" + SYMBOL_LINE_BREAK;
+    let license = "* [License](#license)" + SYMBOL_LINE_BREAK;
+
+    return description + installation + usage + testing + contribution + questions + license;
 }
 
 
