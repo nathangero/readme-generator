@@ -60,11 +60,27 @@ const askForLicense = {
 }
 
 const askForGithub = {
-    
+    type: "input",
+    message: "What's your GitHub username?",
+    name: "github"
 }
 
 const askForEmail = {
-    
+    type: "input",
+    message: "What's an email you can be contacted at?",
+    name: "email",
+    validate: function(value) {
+        let isValid = String(value).toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+
+        if (!isValid) {
+            console.error("Please enter a valid email");
+        } else {
+            return true
+        }
+    }
 }
 
 
@@ -77,8 +93,8 @@ const questions = [
     // askForContribution, 
     // askForTesting, 
     askForLicense, 
-    // askForGithub, 
-    // askForEmail
+    // askForGithub,
+    askForEmail
 ];
 
 /**
