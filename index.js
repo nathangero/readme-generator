@@ -13,28 +13,32 @@ const askForTitle = {
 
 const askforDescription = {
     type: "editor",
-    message: "Describe your project (this will open an editor, save & close it to continue):",
+    message: "Describe your project: (save & close editor to continue)",
     name: "description",
 }
 
 const askForInstallation = {
     type: "editor",
-    message: "How does one install your project?",
+    message: "How does one install your project? (save & close editor to continue)",
     name: "installation",
 }
 
 const askForUsage = {
     type: "editor",
-    message: "How does one use your project?",
+    message: "How does one use your project? (save & close editor to continue)",
     name: "usage",
 }
 
 const askForContribution = {
-    
+    type: "editor",
+    message: "How does one contribute to your project? (save & close editor to continue)",
+    name: "contribution",
 }
 
 const askForTesting = {
-    
+    type: "editor",
+    message: "What tests have you done? (save & close editor to continue)",
+    name: "testing",
 }
 
 const askForLicense = {
