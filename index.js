@@ -178,8 +178,8 @@ function buildReadmeStr(response) {
     let usage = `${SYMBOL_SECTION} Usage${SYMBOL_LINE_BREAK}${use}${SYMBOL_LINE_BREAK}`;
     let testing = `${SYMBOL_SECTION} Tests${SYMBOL_LINE_BREAK}${tests}${SYMBOL_LINE_BREAK}`;
     let contributing = `${SYMBOL_SECTION} Contributing${SYMBOL_LINE_BREAK}${contribute}${SYMBOL_LINE_BREAK}`;
-    let questions = `${SYMBOL_SECTION} Questions${SYMBOL_LINE_BREAK}You can reach me at ${mail} or reach out to me on [GitHub](https://github.com/${git})${SYMBOL_LINE_BREAK}`;
-    let license = `${SYMBOL_SECTION} License${SYMBOL_LINE_BREAK}${lic}${SYMBOL_LINE_BREAK}`;
+    let questions = `${SYMBOL_SECTION} Questions${SYMBOL_LINE_BREAK}If you want to contact me, you can reach me at ${mail} or reach out to me on [GitHub](https://github.com/${git})${SYMBOL_LINE_BREAK}`;
+    let license = `${SYMBOL_SECTION} License${SYMBOL_LINE_BREAK}This application is covered under the ${lic} license${SYMBOL_LINE_BREAK}`;
 
     return `${title}${licenseBadge}${tableOfContents}${description}${installation}${usage}${testing}${contributing}${questions}${license}`
 }
