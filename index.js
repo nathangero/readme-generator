@@ -77,7 +77,6 @@ const askForGithub = {
         // check if the username exists
         let requestUrl = "https://api.github.com/users/" + value
         let response = await fetch(requestUrl);
-        console.log("response:", response)
 
         if (!response.ok) {
             console.error("Couldn't find that GitHub user. Please try again");
@@ -110,15 +109,15 @@ const askForEmail = {
 
 // Create an array of questions for user input
 const questions = [
-    // askForTitle,
+    askForTitle,
     askforDescription, 
-    // askForInstallation, 
-    // askForUsage, 
-    // askForContribution, 
-    // askForTesting, 
-    // askForLicense, 
-    // askForGithub,
-    // askForEmail
+    askForInstallation, 
+    askForUsage, 
+    askForContribution, 
+    askForTesting, 
+    askForLicense, 
+    askForGithub,
+    askForEmail
 ];
 
 /**
