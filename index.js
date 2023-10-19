@@ -62,7 +62,20 @@ const askForLicense = {
 const askForGithub = {
     type: "input",
     message: "What's your GitHub username?",
-    name: "github"
+    name: "github",
+    validate: async function(value) {
+        // check if the username exists
+        let requestUrl = "https://api.github.com/users/" + value
+        let response = await fetch(requestUrl);
+        console.log("response:", response)
+
+        if (!response.ok) {
+            console.error("Couldn't find that GitHub user. Please try again");
+            return ""
+        } else {
+            return true
+        }
+    }
 }
 
 const askForEmail = {
@@ -70,6 +83,7 @@ const askForEmail = {
     message: "What's an email you can be contacted at?",
     name: "email",
     validate: function(value) {
+        // Check if email is an email format
         let isValid = String(value).toLowerCase()
             .match(
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -86,15 +100,15 @@ const askForEmail = {
 
 // Create an array of questions for user input
 const questions = [
-    askForTitle,
+    // askForTitle,
     // askforDescription, 
     // askForInstallation, 
     // askForUsage, 
     // askForContribution, 
     // askForTesting, 
-    askForLicense, 
-    // askForGithub,
-    askForEmail
+    // askForLicense, 
+    askForGithub,
+    // askForEmail
 ];
 
 /**
