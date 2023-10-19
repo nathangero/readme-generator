@@ -80,7 +80,6 @@ const askForGithub = {
 
         if (!response.ok) {
             console.error("Couldn't find that GitHub user. Please try again");
-            return ""
         } else {
             return true
         }
@@ -133,33 +132,55 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 async function init(questions) {
-    let projectInfo = await inquirer.prompt(questions);
+    let projectInfo = {
+        "name": 'My Cool Project',
+        "description": "IT's just awesome.\r\n\r\nYou can go ahead and find out",
+        "installation": 'First make sure you have npm installed on your computer.\r\n' +
+          '\r\n' +
+          'Then go ahead and download this code',
+        "usage": 'Go to the directory of where you downloaded the code.\r\n' +
+          '\r\n' +
+          'Then open up the Terminal and run ```node index.js```',
+        "contribution": 'You can fork this project and make a pull request',
+        "testing": "Not much sadly, that's why I need help!!",
+        "license": 'MIT',
+        "github": 'nathangero',
+        "email": 'nathanageronimo@gmail.com'
+    }
+    // let projectInfo = await inquirer.prompt(questions);
     console.log(projectInfo)
 
-    // let readmeStr = buildReadmeStr(responses);
+    let readmeStr = buildReadmeStr(projectInfo);
     
-    // writeToFile(FILE_NAME, readmeStr);
+    writeToFile(FILE_NAME, readmeStr);
 }
 
 function buildReadmeStr(response) {
     const SYMBOL_TITLE= "#";
     const SYMBOL_SECTION = "##";
     const SYMBOL_LINE_BREAK = "\n\n";
-    let readme = "";
-    let projectName = response.projectName;
 
-    let title = `${SYMBOL_TITLE} ${projectName}${SYMBOL_LINE_BREAK}`;
+    let name = response.name;
+    let desc = response.description;
+    let install = response.installation;
+    let use = response.usage;
+    let contribute = response.contribution;
+    let tests = response.testing;
+    let lic = response.license;
+    let git = response.github;
+    let mail = response.email;
+
+    let title = `${SYMBOL_TITLE} ${name}${SYMBOL_LINE_BREAK}`;
     let tableOfContents = `${SYMBOL_SECTION} Table of Contents${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
-    let description = `${SYMBOL_SECTION} Description${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
-    let installation = `${SYMBOL_SECTION} Installation${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
-    let usage = `${SYMBOL_SECTION} Usage${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
-    let tests = `${SYMBOL_SECTION} Tests${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
-    let contributing = `${SYMBOL_SECTION} Contributing${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
-    let license = `${SYMBOL_SECTION} License${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
+    let description = `${SYMBOL_SECTION} Description${SYMBOL_LINE_BREAK}${desc}${SYMBOL_LINE_BREAK}`;
+    let installation = `${SYMBOL_SECTION} Installation${SYMBOL_LINE_BREAK}${install}${SYMBOL_LINE_BREAK}`;
+    let usage = `${SYMBOL_SECTION} Usage${SYMBOL_LINE_BREAK}${use}${SYMBOL_LINE_BREAK}`;
+    let testing = `${SYMBOL_SECTION} Tests${SYMBOL_LINE_BREAK}${tests}${SYMBOL_LINE_BREAK}`;
+    let contributing = `${SYMBOL_SECTION} Contributing${SYMBOL_LINE_BREAK}${contribute}${SYMBOL_LINE_BREAK}`;
+    let questions = `${SYMBOL_SECTION} Questions${SYMBOL_LINE_BREAK}You can reach me at ${mail} or reach out to me on [GitHub](https://github.com/${git})${SYMBOL_LINE_BREAK}`;
+    let license = `${SYMBOL_SECTION} License${SYMBOL_LINE_BREAK}${lic}${SYMBOL_LINE_BREAK}`;
 
-    readme += `${title}${tableOfContents}${description}${installation}${usage}${tests}${contributing}${license}`
-
-    return readme;
+    return `${title}${tableOfContents}${description}${installation}${usage}${testing}${contributing}${questions}${license}`
 }
 
 
