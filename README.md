@@ -8,9 +8,11 @@ This is achieved by using the node package, [inquirer](https://www.npmjs.com/pac
 
 ### How it works
 
-For sections Description, Installation, Usage, Tests, and Contributing, the user is asked to use their default text editor and write out what they want. So, when the user is talking about the Usage section, they can type out bullet points, numbered lists, use back ticks (`) for code blocks, etc. Once they save and close that editor, the code will store that information until the user is finished.
+For sections Description, Installation, Usage, Tests, and Contributing, the user is asked to use their default text editor and write out what they want. So, when the user is talking about the Usage section, they can type out bullet points, numbered lists, use back ticks ( ` ) for code blocks, etc. Once they save and close that editor, the code will store that information until the user is finished.
 
 For the license section, the user is provided with a few most popuplar license options and the option for "no license." If a license is chosen, the user will have the corresponding badge at the top of the README right under the project title.
+
+When asked for the GitHub username and email, both have to pass validation checks in order to continue on. The GitHub validation will use the ```fetch()``` Web API to check GitHub's API if that's a valid username or not. For the email validation, it must past a ```String().match()``` check which uses Regex to see if the email is of a valid format.
 
 ## Installation
 
@@ -32,6 +34,8 @@ node index.js
 6. Delete the ".generated" portion of the README, and you're good!
 
 ## Video Walkthrough
+
+![Walkthrough of application](https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link)
 
 ## Credits
 
