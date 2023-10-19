@@ -139,24 +139,7 @@ function writeToFile(fileName, data) {
  * @param {Array} questions 
  */
 async function init(questions) {
-    let projectInfo = {
-        "name": 'My Cool Project',
-        "description": "IT's just awesome.\r\n\r\nYou can go ahead and find out",
-        "installation": 'First make sure you have npm installed on your computer.\r\n' +
-          '\r\n' +
-          'Then go ahead and download this code',
-        "usage": 'Go to the directory of where you downloaded the code.\r\n' +
-          '\r\n' +
-          'Then open up the Terminal and run ```node index.js```',
-        "contribution": 'You can fork this project and make a pull request',
-        "testing": "Not much sadly, that's why I need help!!",
-        "license": 'MIT',
-        "github": 'nathangero',
-        "email": 'nathanageronimo@gmail.com'
-    }
-
-    // let projectInfo = await inquirer.prompt(questions);
-    // console.log(projectInfo)
+    let projectInfo = await inquirer.prompt(questions);
 
     let readmeStr = generateMarkdown.generateMarkdown(projectInfo);
     

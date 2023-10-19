@@ -1,4 +1,4 @@
-# My Cool Project
+# My super cool project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -22,29 +22,31 @@
 
 ## Description
 
-IT's just awesome.
+My project will revolutionize the world!
 
-You can go ahead and find out
+Just wait till you try it!
 
 ## Installation
 
-First make sure you have npm installed on your computer.
-
-Then go ahead and download this code
+1. Install node.js on your computer
+2. Download/clone the code from the repo
 
 ## Usage
 
-Go to the directory of where you downloaded the code.
-
-Then open up the Terminal and run ```node index.js```
+1. Move to the directory of where the code was downloaded
+2. Run the following code in the command line:
+```
+node index.js
+```
+3. Follow the prompts until complete.
 
 ## Tests
 
-Not much sadly, that's why I need help!!
+I've done a few edge case testing, but I would love to have more feedback
 
 ## Contributing
 
-You can fork this project and make a pull request
+You can fork my repo and add on to it if you want!
 
 ## Questions
 
