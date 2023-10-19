@@ -35,10 +35,8 @@ node index.js
 
 ## Video Walkthrough
 
+https://github.com/nathangero/readme-generator/assets/25491849/7e388e0e-2d5e-409a-b6b9-87b64d99aebc
 
-[Video walkthrough](./assets/videos/readme-generator-walkthrough.mp4)
-
-https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link
 
 ## Credits
 
