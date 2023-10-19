@@ -35,7 +35,10 @@ node index.js
 
 ## Video Walkthrough
 
-<iframe src="https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link" title="App walkthrough" width="680" height="480"><iframe>
+
+[Video walkthrough](./assets/videos/readme-generator-walkthrough.mp4)
+
+https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link
 
 ## Credits
 
