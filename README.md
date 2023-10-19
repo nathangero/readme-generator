@@ -35,7 +35,7 @@ node index.js
 
 ## Video Walkthrough
 
-![Walkthrough of application](https://drive.google.com/file/d/1KwxrUNZqVJEwGMtYE4eeA3cdM-O1qRaI/view?usp=share_link)
+[Walkthrough of application](./assets/videos/readme-generator-walkthrough.mp4)
 
 ## Credits
 
