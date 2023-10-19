@@ -40,6 +40,11 @@ https://github.com/nathangero/readme-generator/assets/25491849/7e388e0e-2d5e-409
 
 ## Learning Points
 
+- The ```inquirer``` node package is incredibly helpful for getting user input via the terminal/command line. I didn't realize how robust it was.
+- ```switch``` statements are very useful when checking for a String comparison. No redundant ```if (str === "selection")``` conditions.
+- GitHub has great documentation for their licenses and the markdown for the license badges.
+- Using async/await with ```inquirer``` is pretty useful and shortens code by replaceing the ```.then(() => {})``` calls.
+- GitHub allows you drag and drop a ```.mp4``` or ```.mov``` file straight onto a README.md file and the website will automatically generate a video URL for you.
 
 ## Code Snippets
 
