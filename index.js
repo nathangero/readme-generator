@@ -171,6 +171,7 @@ function buildReadmeStr(response) {
     let mail = response.email;
 
     let title = `${SYMBOL_TITLE} ${name}${SYMBOL_LINE_BREAK}`;
+    let licenseBadge = `${buildLicenseBadge(lic)}${SYMBOL_LINE_BREAK}`
     let tableOfContents = `${SYMBOL_SECTION} Table of Contents${SYMBOL_LINE_BREAK}${SYMBOL_LINE_BREAK}`;
     let description = `${SYMBOL_SECTION} Description${SYMBOL_LINE_BREAK}${desc}${SYMBOL_LINE_BREAK}`;
     let installation = `${SYMBOL_SECTION} Installation${SYMBOL_LINE_BREAK}${install}${SYMBOL_LINE_BREAK}`;
@@ -180,7 +181,30 @@ function buildReadmeStr(response) {
     let questions = `${SYMBOL_SECTION} Questions${SYMBOL_LINE_BREAK}You can reach me at ${mail} or reach out to me on [GitHub](https://github.com/${git})${SYMBOL_LINE_BREAK}`;
     let license = `${SYMBOL_SECTION} License${SYMBOL_LINE_BREAK}${lic}${SYMBOL_LINE_BREAK}`;
 
-    return `${title}${tableOfContents}${description}${installation}${usage}${testing}${contributing}${questions}${license}`
+    return `${title}${licenseBadge}${tableOfContents}${description}${installation}${usage}${testing}${contributing}${questions}${license}`
+}
+
+
+function buildLicenseBadge(license) {
+    switch (license) {
+        case "Apache-2.0":
+            return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+
+        case "GPL-2.0":
+            return "[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)"
+
+        case "GPL-3.0":
+            return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+
+        case "MIT":
+            return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+            
+        case "WTFPL":
+            return "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)"
+
+        default: // MIT by default
+            return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    }
 }
 
 
